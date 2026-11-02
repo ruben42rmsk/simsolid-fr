@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>SimSolid — aide anglaise</title>
+  <script>
+(function () {
+  "use strict";
+  var target = "https://help.altair.com/ss/en_us/index.htm";
+  var hasContext = false;
+  new URLSearchParams(window.location.search).forEach(function (value, name) {
+    if (name.toLowerCase() === "contextid" && value !== "") hasContext = true;
+  });
+  if (hasContext) target = "https://help.altair.com/ss/en_us/cshelp.html";
+  window.location.replace(target + window.location.search + window.location.hash);
+}());
+  </script>
+</head>
+<body>
+  <p>Ouverture de l’aide anglaise de SimSolid…</p>
+  <p><a href="https://help.altair.com/ss/en_us/index.htm">Ouvrir l’aide anglaise</a></p>
+</body>
+</html>
